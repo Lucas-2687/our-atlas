@@ -1,5 +1,9 @@
 import assert from "node:assert/strict";
-import { readFile, readdir } from "node:fs/promises";
+import { execFileSync } from "node:child_process";
+import { mkdir, mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { dirname, join } from "node:path";
+import { unzipSync } from "fflate";
 import test from "node:test";
 import { inspectMapAssets } from "../scripts/check-public.mjs";
 import { mapCenter, matchPrefecture } from "../scripts/build-map-data.mjs";
@@ -18,6 +22,24 @@ test("distributed maps match pinned, attributed sources with no undeclared old f
   assert.equal(manifest.sources.length, 6);
   assert.ok(manifest.sources.every((source) => /^[a-f0-9]{64}$/.test(source.sha256) && source.attribution && source.licenseUrl));
   assert.ok(!JSON.stringify(manifest.sources).includes("datav.aliyun"));
+});
+
+test("Windows Git source archives preserve the exact map bytes used by release checks", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "atlas-map-archive-"));
+  const git = (...args) => execFileSync("git", ["-c", "core.autocrlf=true", ...args], { cwd: directory, stdio: ["ignore", "pipe", "pipe"], maxBuffer: 32 * 1024 * 1024 });
+  try {
+    git("init", "--initial-branch=main");
+    for (const name of [...paths, "scripts/map-sources.json", ".gitattributes"]) {
+      await mkdir(dirname(join(directory, name)), { recursive: true });
+      await writeFile(join(directory, name), await load(name));
+    }
+    git("add", ".");
+    const tree = git("write-tree").toString().trim();
+    const archive = unzipSync(git("archive", "--format=zip", tree));
+    assert.deepEqual(await inspectMapAssets(Object.keys(archive).filter((name) => !name.endsWith("/")), async (name) => Buffer.from(archive[name])), []);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
 });
 
 test("release checks reject replaced bytes, missing maps and undeclared additions", async () => {
