@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "changes": "Converted GeoJSON/SHP, rounded coordinates, mapped administrative names/codes, merged former Laiwu into Jinan; Wenchang supplemented from PDDL county data. Settlement-only records do not fabricate boundaries.",
+  "sources": [
+    {
+      "id": "world",
+      "file": "world-source.geojson",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_50m_admin_0_countries.geojson",
+      "sha256": "3e458fc036ad0a66411f2c1e6cac49c5d7bfb81cb1123bc513b22511a2b7fdeb",
+      "license": "Public Domain",
+      "licenseUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "attribution": "Natural Earth contributors"
+    },
+    {
+      "id": "cities",
+      "file": "cities-source.geojson",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_10m_populated_places.geojson",
+      "sha256": "9b8e3de09048ef00dfc70357dbb9fa324493f214b5e0ae4daf1aa79a8d10116b",
+      "license": "Public Domain",
+      "licenseUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "attribution": "Natural Earth contributors"
+    },
+    {
+      "id": "provinces",
+      "file": "humanitarian-provinces.geojson",
+      "url": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbHumanitarian/CHN/ADM1/geoBoundaries-CHN-ADM1_simplified.geojson",
+      "sha256": "37137aae40dd483dab9b268c38ad29c03a7eac35b2134c677e36878e712ec7bd",
+      "license": "CC-BY-3.0-IGO AND CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/igo/",
+      "attribution": "HDX China administrative boundaries (2020); geoBoundaries contributors",
+      "sourcePage": "https://www.geoboundaries.org/api/current/gbHumanitarian/CHN/ADM1/"
+    },
+    {
+      "id": "prefectures",
+      "file": "humanitarian-cities.zip",
+      "url": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/sourceData/gbHumanitarian/CHN_ADM2.zip",
+      "sha256": "6a3e61260e172964718dc0973e785afb5c88e8653d655a1f08cc8b129b3f6028",
+      "license": "CC-BY-3.0-IGO AND CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/igo/",
+      "attribution": "HDX China administrative boundaries (2020); geoBoundaries contributors",
+      "sourcePage": "https://www.geoboundaries.org/api/current/gbHumanitarian/CHN/ADM2/"
+    },
+    {
+      "id": "counties",
+      "file": "china-counties.geojson",
+      "url": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbOpen/CHN/ADM2/geoBoundaries-CHN-ADM2_simplified.geojson",
+      "sha256": "8c7dfa8e40842f9162453d9b0b614276a48bf635559ba371c7982cb288e7b303",
+      "license": "PDDL-1.0 AND CC-BY-4.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/pddl/1-0/",
+      "attribution": "National Administration of Surveying, Mapping and Geoinformation of China; Revolutionary GIS; geoBoundaries contributors",
+      "sourcePage": "https://www.geoboundaries.org/api/current/gbOpen/CHN/ADM2/"
+    },
+    {
+      "id": "codes",
+      "file": "administrative-codes.json",
+      "url": "https://raw.githubusercontent.com/modood/Administrative-divisions-of-China/c49d495b40ac73eb1a66f6eeae5f8fd10696f035/dist/pca-code.json",
+      "sha256": "83b7536f853ad16beb4d37b92890a3fd7bb9d33d4f37e7c8885fb948749a9bc4",
+      "license": "WTFPL",
+      "licenseUrl": "https://raw.githubusercontent.com/modood/Administrative-divisions-of-China/c49d495b40ac73eb1a66f6eeae5f8fd10696f035/LICENSE",
+      "attribution": "Administrative-divisions-of-China contributors; administrative names and codes"
+    }
+  ],
+  "markerOnly": [
+    {
+      "id": "CN-659002",
+      "name": "阿拉尔市",
+      "source": "https://en.wikipedia.org/wiki/Aral,_Xinjiang"
+    },
+    {
+      "id": "CN-659003",
+      "name": "图木舒克市",
+      "source": "https://en.wikipedia.org/wiki/Tumxuk"
+    },
+    {
+      "id": "CN-659004",
+      "name": "五家渠市",
+      "source": "https://en.wikipedia.org/wiki/Wujiaqu"
+    },
+    {
+      "id": "CN-659005",
+      "name": "北屯市",
+      "source": "https://en.wikipedia.org/wiki/Beitun,_Xinjiang"
+    },
+    {
+      "id": "CN-659006",
+      "name": "铁门关市",
+      "source": "https://en.wikipedia.org/wiki/Tiemenguan"
+    },
+    {
+      "id": "CN-659007",
+      "name": "双河市",
+      "source": "https://en.wikipedia.org/wiki/Shuanghe"
+    },
+    {
+      "id": "CN-659008",
+      "name": "可克达拉市",
+      "source": "https://en.wikipedia.org/wiki/Kokdala"
+    },
+    {
+      "id": "CN-659009",
+      "name": "昆玉市",
+      "source": "https://en.wikipedia.org/wiki/Kunyu"
+    },
+    {
+      "id": "CN-659010",
+      "name": "胡杨河市",
+      "source": "https://en.wikipedia.org/wiki/Huyanghe"
+    },
+    {
+      "id": "CN-659011",
+      "name": "新星市",
+      "source": "https://en.wikipedia.org/wiki/Xinxing,_Xinjiang"
+    },
+    {
+      "id": "CN-659012",
+      "name": "白杨市",
+      "source": "https://en.wikipedia.org/wiki/Baiyang,_Xinjiang"
+    }
+  ],
+  "files": {
+    "china.json": "c7f3c986f2964e9fa962a5cfd27abc9fa34158e8a19f68176d12e3731dcedf24",
+    "world.json": "6627130030c20efe5eda7b47d30791a900fcca700ee7be9e47e314d6ae3f7174",
+    "catalog.json": "8c98fd6943ff2fd8d107f3f2efd3c4fb7ab92f4805e834c5221b99dbe330cbf2",
+    "provinces/130000.json": "16f3eb72caee04661ab3744d3cca9db58f0f916601dc521093c06f4bfd435d25",
+    "provinces/140000.json": "48e5ce3e43ab27811c27db78b6e0c75799e2e3fb8b25ca7241778dd1c72bf84f",
+    "provinces/150000.json": "9d4d81e621fc3352bfac7aa31bfa3bf5d826a2b5eac41b69c838ddebd9da4d05",
+    "provinces/210000.json": "fa08cf07cf8683871ec7628078824d72937a9a738d37db4865fd9d73a68a6951",
+    "provinces/220000.json": "d12a027c42a52f631a5440491410f87d2c450263a4a1bdd25c827aae31c70b82",
+    "provinces/230000.json": "5fe0670309915baeb662cf4ffb5bce3df702e5f6fd15c0d5b3b6abbe592b3df3",
+    "provinces/320000.json": "a9aea33a8bb6cab8b4a8a90d9e56eb8c0035dab919f2e90c03dfe75aca74f9e6",
+    "provinces/330000.json": "5a35797da484e45a77bb4e7b542954daff713568f82436d11994e4e180fa702a",
+    "provinces/340000.json": "f918099d53896e64e7509d7a51aa3f437bdf810be791240d3cf5e8499a1c5384",
+    "provinces/350000.json": "0d1bb41a1a6b8d3977374777725ae417782e2420d52d0dcb6ddcbbf146c34dc0",
+    "provinces/360000.json": "2ebea130bda1b85edbeba3e639a4c64c3375e2352ee259140584a567d63a6e6b",
+    "provinces/370000.json": "e65eda43040380cbd3f6a5bd8760958edabbe5e8eedd745024a3ac6e0930cfda",
+    "provinces/410000.json": "8051f220838eac266869876af986aa6f6cb9e5dd83593afd197ca8506ad63633",
+    "provinces/420000.json": "460490349d397d1ca49c1fb527fe0c1a423a53e97e8a2fe17cbc9fcc1fba95a2",
+    "provinces/430000.json": "47b18868cc633a42f12b72f424cec822b066eff1c1eb259a32cc125ceac1cddc",
+    "provinces/440000.json": "1cbdfb10bad92be4101e39d19b4d38692f4f1e3905e0a98fb5ba35c14714f7d8",
+    "provinces/450000.json": "ab405fe4fa00f2e024188ffdc0ea4930c61251f0e4074961fe28ae48926dec0f",
+    "provinces/460000.json": "cbedbc56a1a7ead315047e05592ad17500ae3499b81cee2fd3a84b966285d49f",
+    "provinces/510000.json": "2273e255aa8b00cae72e54746761df6043f7944abafa7ee395c4f94d17f6fc7e",
+    "provinces/520000.json": "6da96036eb539994b0cb47a75f4309523fb342beb7344b29808d109f9d684f67",
+    "provinces/530000.json": "0822e85d4fca25a40326b6541f8c6f7c42a7781e90bd6461b131adc8b365f442",
+    "provinces/540000.json": "f7ca8c0370f076d2c21195d727d5b0d29dab446d0e3835c65679a4c15f9a8577",
+    "provinces/610000.json": "7f2e39cb09cedd62845530c101309e7f6b71ea30b0704fbcd910f7aa334b9302",
+    "provinces/620000.json": "f10029b63b7a5df2830fb6d2a77ddd9d6e64fe7867d3e2750c19057386bd30d7",
+    "provinces/630000.json": "4ea7b3d788b342644e4898ab326e22e6c49c13485a22b83b6371f5f6ae3054ec",
+    "provinces/640000.json": "7ea08e8142ddf0fa653e6d351e837318ce30f05ae76fecc9a6f1913939521638",
+    "provinces/650000.json": "7db390021fdf29063aeb1b81336bf266491f68290c1e6f563afa40d45d80685a",
+    "provinces/710000.json": "6d18edfe75b3149104038dcbca4d0096bbcb923f0f9fa4b49f4815344e75bb90"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "our-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --quiet",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test",
+    "db:setup": "node scripts/supabase-setup.mjs",
+    "deploy:link": "node scripts/deploy-link.mjs",
+    "check:public": "node scripts/check-public.mjs",
+    "maps:build": "node scripts/rebuild-maps.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^1.31.0",
+    "next": "16.3.4",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.11",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.3.4",
+    "fflate": "^0.8.3",
+    "pinyin-pro": "^3.29.5",
+    "polygon-clipping": "^0.15.7",
+    "polylabel": "^2.1.0",
+    "shapefile": "^0.6.6",
+    "typescript": "5.9.3"
+  },
+  "type": "module"
+}
