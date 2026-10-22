@@ -10,6 +10,7 @@
 | 文昌补充边界 | geoBoundaries gbOpen，中国 ADM2；来源 National Administration of Surveying, Mapping and Geoinformation of China / Revolutionary GIS | 原始 PDDL-1.0；整理版 CC BY 4.0 |
 | 行政代码和中文名称 | [Administrative-divisions-of-China](https://github.com/modood/Administrative-divisions-of-China) 固定版本 | WTFPL；按名称和代码独立映射，不采用旧供应商的地理几何 |
 | 示例旅行与插画 | [lib/demo.ts](lib/demo.ts)、[public/demo](public/demo) | 虚构文字与项目自制 SVG，采用 MIT；原来源未核实的三张 JPEG 已替换 |
+| 文档图示与界面截图 | [docs/images](docs/images)，本地实际界面配合虚构数据与自制插画 | 自制流程与配置 SVG 采用 MIT；含底图的截图保留 Natural Earth、HDX/geoBoundaries 与相关许可署名，不把第三方底图改称 MIT |
 | npm 依赖 | [package.json](package.json)、[package-lock.json](package-lock.json) | 分别遵守各包自带的 LICENSE；不随源码提交 `node_modules` |
 
 ## 地图改动与许可范围

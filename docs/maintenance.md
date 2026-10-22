@@ -41,13 +41,24 @@ npm run deploy:link
 
 ## 日常代码更新
 
+旅行内容在 `/edit` 管理；下面的流程用于修改页面、功能和文档。只想新增一段旅行时，跳过本节。
+
+### 1. 同步代码，再开自己的修改分支
+
+在含 `package.json` 的目录打开 VS Code 终端，先运行 `git status --short`。如果已有本地改动，先确认并保存，不用重置或覆盖来消除提示。
+
 ```powershell
+git status --short
 git pull --ff-only
 npm ci
 git switch -c improve-map
 ```
 
-在 VS Code 修改后运行：
+`improve-map` 是示例分支名，每次修改选一个新的名字。`pull --ff-only` 无法快进时先检查分支差异，不强制覆盖远程或丢弃本地修改。`npm ci` 按锁文件安装依赖，不读取 Supabase 生产数据。
+
+### 2. 修改并检查
+
+在 VS Code 修改代码后运行现有检查。需要实际试用页面时，用独立测试 Supabase 配置 `.env.local`，再运行 `npm run dev`；不要把试验录入生产库。
 
 ```powershell
 npm run lint
@@ -57,9 +68,43 @@ npm run build
 npm run check:public
 ```
 
-检查通过再提交到功能分支，推送并创建 Pull Request。Preview 应配置独立的测试 Supabase，确认后合入 `main`。Vercel 只在项目连接正确仓库和分支后才会自动部署。GitHub Actions 只做本地检查，不使用生产密钥，不自动修改数据库。
+看到报错先处理当前修改引起的问题，不以关闭检查代替修复。只改说明文字时，重点检查链接、图片和内容是否正确；仓库的 GitHub Actions 仍会在推送后执行自动检查。
 
-只改旅行内容时不必执行以上流程。依赖锁文件属于源码，应和依赖清单一起提交。升级框架或更换数据结构时先做备份、在测试环境验证，再部署生产。
+### 3. 检查拟提交内容，再提交和推送
+
+```powershell
+git status --short
+git add .
+git diff --cached --stat
+git diff --cached
+npm run check:public -- --staged --release
+```
+
+核对列出的文件都是本次修改，不含真实旅行、照片、环境配置或备份。检查通过后提交，并把自己的分支推到自己的仓库：
+
+```powershell
+git commit -m "Describe this change"
+git push -u origin improve-map
+```
+
+提交说明改成能描述实际改动的文字。第一条保存本地版本，第二条才上传 GitHub；本地提交成功不代表远程已经更新。
+
+### 4. 在 GitHub 合并，再看部署结果
+
+1. 打开自己的仓库，使用 **Compare & pull request** 或 **Pull requests → New pull request**。
+2. Base 选择 `main`，Compare 选择本次分支，确认文件差异后创建 Pull Request。
+3. 等待 **Checks** 自动检查通过。若失败，进入对应检查查看失败步骤，修复后继续推送同一个分支。
+4. 需要 Preview 时先为 Preview 配置独立的测试 Supabase，确认页面和编辑流程后再合并。
+5. 选择合并到 `main`。**仅在 Vercel 已连接正确仓库和生产分支时**，合并推送才会触发对应站点部署。
+6. 到 Vercel 的 Deployments 查看新版本是否成功，再打开正式网站确认旧记录、照片与编辑入口仍正常。GitHub 检查成功不等于 Vercel 发布已经成功。
+
+GitHub Actions 不使用生产密钥，不自动修改数据库。数据库结构变更要另外按迁移流程处理；回退代码也不等于回退数据库。
+
+### 只想修改 README 或说明文字
+
+也可以在 GitHub 打开 Markdown 文件，用网页编辑入口修改文字；提交时选择新分支并创建 Pull Request。预览图片与链接，等检查通过再合并，无需 Codex 或本地运行 AI 工具。不要把密钥、个人数据或真实控制台截图粘进去。
+
+依赖锁文件属于源码，应和依赖清单一起提交。升级框架或更换数据结构时先做备份、在测试环境验证，再部署生产。
 
 ## 环境配置
 
