@@ -8,9 +8,11 @@
 
 ## 第一次接入 GitHub
 
+项目的公开模板是 [Lucas-2687/our-atlas](https://github.com/Lucas-2687/our-atlas)。新用户可从模板生成自己的仓库，后续使用自己的远程地址和 Supabase 配置。
+
 此目录已初始化本地 Git；源码包也可用 `git init -b main` 重新建立仓库。地图的授权、转换和来源已说明于 [第三方说明](../THIRD_PARTY.md)，公开前仍应检查自己的实际配置和拟提交文件。使用已含初始提交的版本时，可先用 `git log -1 --oneline` 查看，不必重复创建初始提交。
 
-发布条件满足后，在你自己的 GitHub 账户创建空仓库；不要在网页上预先生成 README，以免产生不必要的初始分支冲突。下面的 OWNER、REPO 是占位符，必须换成你确认的目标。
+如果从源码压缩包开始，在自己的 GitHub 账户创建空仓库；不要在网页上预先生成 README，以免产生不必要的初始分支冲突。已经通过模板创建或克隆项目时，直接检查现有 remote 并跳过重复创建步骤。下面的 OWNER、REPO 是占位符，必须换成自己的目标；维护作者的本地目录时使用已连接的 `origin`。
 
 ```powershell
 git status --short

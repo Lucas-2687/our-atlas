@@ -2,6 +2,12 @@
 
 两个人共同记录旅行的地图与手账：点亮国家、省份和城市，保存旅行日期、故事与照片。一个部署对应一张地图。
 
+[使用模板创建自己的地图](https://github.com/Lucas-2687/our-atlas/generate)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLucas-2687%2Four-atlas&env=SUPABASE_URL%2CSUPABASE_SECRET_KEY%2CATLAS_SETUP_KEY&envLink=https%3A%2F%2Fgithub.com%2FLucas-2687%2Four-atlas%2Fblob%2Fmain%2FREADME.md)
+
+部署前请完成下方的 Supabase 初始化，使用自己的数据库与服务端密钥。
+
 - `/`：任何访客都能浏览已保存的旅行、称呼、地点、日期、故事和照片。
 - `/edit`：你和伴侣使用共同口令记录和修改，无需 Codex、ChatGPT 登录或地图编号。
 - 支持日期精度、重复到访、选定旅行分享和足迹卡片导出。
@@ -28,7 +34,7 @@
 npm run deploy:link -- https://github.com/OWNER/REPO
 ```
 
-该命令只输出 Vercel 部署链接、可贴入 README 的按钮和 GitHub 模板入口，不上传代码或传输密钥。仓库尚未发布时，也可以在 [Vercel 新项目](https://vercel.com/new) 手动导入已连接的 GitHub 仓库。
+该命令只输出 Vercel 部署链接、可贴入 README 的按钮和 GitHub 模板入口，不上传代码或传输密钥。也可以在 [Vercel 新项目](https://vercel.com/new) 手动导入自己的 GitHub 仓库。
 
 ### 2. 初始化自己的 Supabase
 
