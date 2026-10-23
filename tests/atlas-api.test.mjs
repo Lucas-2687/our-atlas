@@ -44,7 +44,7 @@ describe("offline API with real route, access modules, photo processing and Post
   });
 
   async function setup() {
-    const response = await atlas.request("space", { method: "POST", data: { setupKey, password, title: "合成同行地图", names: ["合成甲", "合成乙"] } });
+    const response = await atlas.request("space", { method: "POST", data: { setupKey, password, title: "合成旅行地图", names: ["合成甲", "合成乙"] } });
     const session = cookie(response);
     const { id } = await json(response, 201);
     return { id, session };
@@ -105,7 +105,7 @@ describe("offline API with real route, access modules, photo processing and Post
     await json(await atlas.request("trips", { method: "POST", cookie: `atlas_session=${"0".repeat(48)}`, data: trip() }), 401);
     await json(await atlas.request("trips", { method: "POST", cookie: session, data: trip(), headers: { Origin: "https://other.invalid" } }), 403);
     assert.deepEqual((await atlas.db.query("select * from public.trips")).rows, before);
-    assert.equal((await atlas.db.query("select title from public.spaces where id = $1", [id])).rows[0].title, "合成同行地图");
+    assert.equal((await atlas.db.query("select title from public.spaces where id = $1", [id])).rows[0].title, "合成旅行地图");
     assert.equal((await atlas.db.query("select * from public.shares")).rows.length, 0);
     assert.equal(atlas.uploads.length, 0);
 
@@ -129,7 +129,7 @@ describe("offline API with real route, access modules, photo processing and Post
       assert.equal(publicAtlas.readonly, true);
       assert.deepEqual(publicAtlas.trips.map((row) => row.id), [first, second]);
       for (const field of ["title", "precision", "start", "end", "story", "places", "photos"]) assert.deepEqual(publicAtlas.trips[0][field], firstInput[field]);
-      assert.equal(publicAtlas.space.title, "合成同行地图");
+      assert.equal(publicAtlas.space.title, "合成旅行地图");
     }
     const changed = trip({ title: "保存后的更新标题", story: "更新后保存在数据库中的合成故事" });
     await json(await atlas.request(`trips/${first}`, { method: "PATCH", cookie: session, data: changed }));

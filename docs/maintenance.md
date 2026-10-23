@@ -8,7 +8,7 @@
 
 ## 第一次接入 GitHub
 
-项目的公开模板是 [Lucas-2687/our-atlas](https://github.com/Lucas-2687/our-atlas)。新用户可从模板生成自己的仓库，后续使用自己的远程地址和 Supabase 配置。
+项目的公开模板是 [Lucas-2687/travel-map](https://github.com/Lucas-2687/travel-map)。新用户可从模板生成自己的仓库，后续使用自己的远程地址和 Supabase 配置。
 
 此目录已初始化本地 Git；源码包也可用 `git init -b main` 重新建立仓库。地图的授权、转换和来源已说明于 [第三方说明](../THIRD_PARTY.md)，公开前仍应检查自己的实际配置和拟提交文件。使用已含初始提交的版本时，可先用 `git log -1 --oneline` 查看，不必重复创建初始提交。
 
@@ -27,7 +27,7 @@ git diff --cached
 检查结果通过后，如仓库还没有提交则创建首个提交，再设置远程地址和推送：
 
 ```powershell
-git commit -m "Prepare Our Atlas for open source"
+git commit -m "Prepare travel-map for open source"
 git remote add origin https://github.com/OWNER/REPO.git
 git push -u origin main
 npm run deploy:link

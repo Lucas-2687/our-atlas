@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
 <title id="title">三个服务端环境变量分别从哪里来</title><desc id="desc">Supabase URL 填自己的项目地址，Supabase secret key 填自己的服务器密钥，Atlas setup key 是站主生成的至少十二字符初始化密钥。本图不含真实配置值，三个变量不添加 NEXT_PUBLIC 前缀。</desc>
 <rect width="1200" height="660" rx="24" fill="#f5f7f2"/>
-<g font-family="Microsoft YaHei, PingFang SC, sans-serif"><text x="52" y="65" font-size="16" letter-spacing="3" fill="#698476">OUR ATLAS / CONFIGURATION</text><text x="52" y="112" font-size="33" font-weight="700" fill="#243f3b">三个变量，各司其职</text><text x="52" y="148" font-size="18" fill="#6c7e73">在 Vercel 项目中添加；本图只解释字段，所有真实值都由你自己填写。</text>
+<g font-family="Microsoft YaHei, PingFang SC, sans-serif"><text x="52" y="65" font-size="16" letter-spacing="3" fill="#698476">TRAVEL MAP / CONFIGURATION</text><text x="52" y="112" font-size="33" font-weight="700" fill="#243f3b">三个变量，各司其职</text><text x="52" y="148" font-size="18" fill="#6c7e73">在 Vercel 项目中添加；本图只解释字段，所有真实值都由你自己填写。</text>
 <g fill="#fffefa" stroke="#d8e3d6"><rect x="52" y="184" width="1096" height="105" rx="15"/><rect x="52" y="310" width="1096" height="105" rx="15"/><rect x="52" y="436" width="1096" height="105" rx="15"/></g>
 <g font-family="Consolas, monospace" font-size="22" fill="#2e7163" font-weight="700"><text x="78" y="229">SUPABASE_URL</text><text x="78" y="355">SUPABASE_SECRET_KEY</text><text x="78" y="481">ATLAS_SETUP_KEY</text></g>
 <g font-size="16" fill="#6c7e73"><text x="78" y="261">让网站找到自己的 Supabase 项目</text><text x="78" y="387">只给服务器使用的数据库访问凭证</text><text x="78" y="513">只在第一次建立地图时使用</text></g>

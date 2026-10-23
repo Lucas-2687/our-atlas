@@ -1,6 +1,6 @@
-# 从零部署同行地图
+# 从零部署旅行地图
 
-本手册用于将 [Our Atlas](https://github.com/Lucas-2687/our-atlas) 部署到自己的 GitHub、Supabase 和 Vercel 账户。主路线全程使用浏览器，无需终端；生成合并 SQL 是可选操作。
+本手册用于将 [travel-map](https://github.com/Lucas-2687/travel-map) 部署到自己的 GitHub、Supabase 和 Vercel 账户。主路线全程使用浏览器，无需终端；生成合并 SQL 是可选操作。
 
 > 已有旅行或已上线网站：直接阅读文末“已有网站升级”。不要重复初始化、清空表或重置生产数据库。
 
@@ -32,7 +32,7 @@ Storage 的 `travel-photos` bucket **必须是 private**。这阻止访客直接
 
 ## 1. 用模板创建自己的 GitHub 仓库
 
-1. **入口：** 打开 [项目仓库](https://github.com/Lucas-2687/our-atlas)，点击 **Use this template → Create a new repository**；也可打开[模板生成入口](https://github.com/Lucas-2687/our-atlas/generate)。
+1. **入口：** 打开 [项目仓库](https://github.com/Lucas-2687/travel-map)，点击 **Use this template → Create a new repository**；也可打开[模板生成入口](https://github.com/Lucas-2687/travel-map/generate)。
 2. **填写：** Owner 选择自己的账户或团队，Repository name 填自己的仓库名，例如 `my-atlas`；按需要选择公开或私有，然后创建。仓库公开与否不改变网站首页的公开行为。
 3. **成功标志：** 地址变成你的 `GitHub账户/仓库名`，文件列表中有 `package.json`、`app`、`supabase`。记住这份仓库，后续只导入它。
 
@@ -99,7 +99,7 @@ node .\scripts\supabase-setup.mjs | Set-Clipboard
 
 1. **入口：** Vercel 工作区 **Add New → Project**，在导入 Git 仓库区域连接 GitHub。
 2. **操作与填写：** 授权访问第 1 步创建的仓库，在列表中选择它并 **Import**；若列表为空，检查 GitHub 集成对该仓库的访问权限，不必再创建仓库。
-3. **填写：** 项目名自定，Framework Preset 选择 **Next.js**；Root Directory 指向**仓库中 `package.json` 所在的应用根目录**。模板生成的仓库通常就是仓库根，保持默认根目录；不要填本机 `C:\...`，也不要因仓库名叫 `our-atlas` 就再填一层同名目录。
+3. **填写：** 项目名自定，Framework Preset 选择 **Next.js**；Root Directory 指向**仓库中 `package.json` 所在的应用根目录**。模板生成的仓库通常就是仓库根，保持默认根目录；不要填本机 `C:\...`，也不要因仓库名叫 `travel-map` 就再填一层同名目录。
 4. **检查：** Node.js 选择平台支持且不低于 `22.13.0` 的版本，推荐 22.x 或 24.x；版本选项通常在项目 Settings 的 Build and Deployment 中。构建、安装、输出目录保留 Next.js 自动检测值，除非日志明确需要调整。
 5. **成功标志：** Vercel 显示的是你自己的仓库、预期分支和 Next.js 设置，能够找到 `package.json`。
 

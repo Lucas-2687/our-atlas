@@ -1,16 +1,20 @@
-# 同行地图 · Our Atlas
+# travel-map
 
-两个人共同记录旅行的地图与手账：点亮国家、省份和城市，保存旅行日期、故事与照片。一个部署对应一张地图。
+中文 | [English](README.en.md)
 
-[使用模板创建自己的地图](https://github.com/Lucas-2687/our-atlas/generate)
+两个人共用的旅行地图与手账：记录国家、省份和城市，保存日期、故事与照片。一个部署对应一张地图，中文地图名称可使用“我们的旅行地图”。
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLucas-2687%2Four-atlas&env=SUPABASE_URL%2CSUPABASE_SECRET_KEY%2CATLAS_SETUP_KEY&envLink=https%3A%2F%2Fgithub.com%2FLucas-2687%2Four-atlas%2Fblob%2Fmain%2FREADME.md)
+目前应用界面为中文；双语仅指项目文档，不包含运行时语言切换。
+
+[使用模板创建自己的地图](https://github.com/Lucas-2687/travel-map/generate)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLucas-2687%2Ftravel-map&env=SUPABASE_URL%2CSUPABASE_SECRET_KEY%2CATLAS_SETUP_KEY&envLink=https%3A%2F%2Fgithub.com%2FLucas-2687%2Ftravel-map%2Fblob%2Fmain%2FREADME.md)
 
 部署前请完成下方的 Supabase 初始化，使用自己的数据库与服务端密钥。
 
 [从零部署图文教程](docs/deployment.md) · [日常使用指南](docs/usage.md) · [代码维护与备份](docs/maintenance.md)
 
-![同行地图实际界面：地图、共同足迹和最近旅行](docs/images/overview.png)
+![旅行地图实际界面：地图、共同足迹和最近旅行](docs/images/overview.png)
 
 *文中界面截图使用虚构旅行和项目自制插画，不包含真实用户记录。新部署的网站从空白地图开始，不会自动导入截图中的旅行。点击图片可查看大图。*
 
@@ -36,28 +40,28 @@
 <tr>
 <td width="50%" valign="top">
 <a href="docs/images/journal.png"><img src="docs/images/journal.png" alt="虚构示例：旅行手账按时间呈现京都、大理和杭州三段旅行" width="100%" /></a>
-<p><strong>旅行手账：每次出发单独收藏。</strong><br />地图回答“去过哪里”，手账保留“这一次发生了什么”。同一个地方可以写多次。</p>
+<p><strong>旅行手账</strong><br />按时间查看旅行；同一个地方可以记录多次。</p>
 </td>
 <td width="50%" valign="top">
 <a href="docs/images/trip-detail.png"><img src="docs/images/trip-detail.png" alt="虚构示例：京都旅行详情中的日期、地点、故事和插画" width="100%" /></a>
-<p><strong>旅程详情：把地点变成回忆。</strong><br />点开一段旅行，查看这一趟的日期、多个地点、照片和故事。</p>
+<p><strong>旅程详情</strong><br />点开一段旅行，查看这一趟的日期、多个地点、照片和故事。</p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <a href="docs/images/record-trip.png"><img src="docs/images/record-trip.png" alt="虚构示例：编辑旅行表单，包含地点、日期精度、故事与照片" width="100%" /></a>
-<p><strong>记录与编辑：先写记得的部分。</strong><br />至少添加一个地点，日期和故事都可以以后补。图中是已有示例旅行的编辑表单，新建旅行使用相同字段。</p>
+<p><strong>记录与编辑</strong><br />至少添加一个地点，日期和故事都可以以后补。图中是已有示例旅行的编辑表单，新建旅行使用相同字段。</p>
 </td>
 <td width="50%" valign="top">
 <a href="docs/images/share.png"><img src="docs/images/share.png" alt="虚构示例：分享面板中的足迹图片、国家数和城市数" width="100%" /></a>
-<p><strong>分享足迹：导出图片或分享链接。</strong><br />PNG 适合保存和分享；只读链接可以选范围和有效期。它们不能代替数据库与照片备份。</p>
+<p><strong>分享与导出</strong><br />PNG 适合保存和分享；只读链接可以选范围和有效期。它们不能代替数据库与照片备份。</p>
 </td>
 </tr>
 </table>
 
 第一次使用的流程是：打开 `/edit` → 验证口令 → 点击“记录共同旅行” → 添加地点、日期、故事或照片 → 保存 → 返回首页查看。完整操作、照片限制和分享规则见 [日常使用图文指南](docs/usage.md)。
 
-源码已整理为独立维护的开源版本。地图使用许可明确的 Natural Earth、HDX/geoBoundaries 等固定来源；自有代码采用 MIT，地图按各自许可分发，见 [第三方来源](THIRD_PARTY.md)。原有地点编号全部保留，少数缺少核实边界的新行政区以城市标记展示。
+地图使用许可明确的 Natural Earth、HDX/geoBoundaries 等固定来源；自有代码采用 MIT，地图按各自许可分发，见 [第三方来源](THIRD_PARTY.md)。原有地点编号全部保留，少数缺少核实边界的新行政区以城市标记展示。
 
 ## 代码、数据与公开范围
 
@@ -67,7 +71,7 @@
 
 **网站本身是公开旅行册。** 编辑口令限制修改，不限制浏览；分享链接的范围、过期和撤销仅作用于分享入口，不会隐藏首页已有的记录。私有 bucket 阻止直接访问存储，但网站 API 会向访客提供已关联旅行的照片。未关联照片仅允许编辑者读取。
 
-新照片在服务器端校正方向、重编码并清除 EXIF/GPS 等元数据；支持 JPG、PNG、WebP，每张最多 4 MiB、40MP，处理后最长边 4096px。历史照片不会被自动重写。足迹卡片导出的是 PNG，**不能代替数据和照片备份**。
+新照片在服务器端校正方向、重编码并清除 EXIF/GPS 等元数据；支持 JPG、PNG、WebP，每张最多 4 MiB、40MP，输入任一边不超过 16384px，处理后最长边 4096px。历史照片不会被自动重写。足迹卡片导出的是 PNG，**不能代替数据和照片备份**。
 
 ## 快速搭建
 
@@ -84,7 +88,7 @@
 | 5. 首次设图 | 打开 `/edit` 设置称呼和编辑口令；完成后删除初始化变量并重新部署 | 用编辑口令仍能进入，不再需要初始化密钥 |
 | 6. 开始记录 | 在网页新增旅行并保存 | 刷新后记录仍在，首页能公开浏览 |
 
-下面四部分是速查；完整点击路径、五个 SQL 文件的作用和排错表都在图文教程里。**模板生成与 Vercel Deploy 按钮是两条入口：已生成自己的仓库时，直接在 Vercel 导入它，避免再创建第二份。**
+下面是部署速查；详细操作和排错见图文教程。**模板生成与 Vercel Deploy 按钮是两条入口：已生成自己的仓库时，直接在 Vercel 导入它，避免再创建第二份。**
 
 ### 1. 准备自己的仓库
 

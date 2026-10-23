@@ -248,7 +248,7 @@ async function handle(req: Request) {
       if (!await validSetupKey(input.setupKey)) throw new ApiError(403, "初始化密钥不正确，请检查部署设置");
       const password = validPassword(input.password);
       const names = [str(input.names?.[0] || "我", 24), str(input.names?.[1] || "你", 24)];
-      const title = str(input.title || "我们的同行地图", 80);
+      const title = str(input.title || "我们的旅行地图", 80);
       const id = crypto.randomUUID();
       const userId = `map:${id}`;
       const salt = randomSecret();

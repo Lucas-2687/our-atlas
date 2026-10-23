@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "同行地图 · 把一起走过的地方留下",
+  title: "旅行地图 · 把一起走过的地方留下",
   description: "属于两个人的旅行手账。点亮共同去过的国家与城市，补录旧旅行，分享新的回忆。",
   icons: {
     icon: "/favicon.svg",

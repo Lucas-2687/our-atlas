@@ -31,7 +31,7 @@ npm run check:public -- --release
 如要先生成到独立目录供比较：
 
 ```powershell
-$env:ATLAS_MAP_OUTPUT = "$env:TEMP\our-atlas-maps"
+$env:ATLAS_MAP_OUTPUT = "$env:TEMP\travel-map-maps"
 npm run maps:build
 Remove-Item Env:ATLAS_MAP_OUTPUT
 ```
